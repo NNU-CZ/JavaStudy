@@ -14,10 +14,10 @@ public class Track implements Serializable {
 
     public void writer(){
         try {
-            String filename = path+"\\"+this.driver_id+".txt";
+            String filename = path+"\\"+this.orders+".ser";
             File filter = new File(filename);
             if(filter.exists()){
-                filename = filename+"txt";
+                filename = filename+".ser";
             }
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
             out.writeObject(this);

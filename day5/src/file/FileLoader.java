@@ -22,13 +22,12 @@ public class FileLoader {
 
     public FileLoader(String filename) throws IOException {
         BufferedReader br = bufLoader(filename);
-
         String line = "";
         Track odr = new Track("0","0");
         Track track = null;
         while ((line = br.readLine())!=null){
             String[] sp_line = line.split(",");
-            if(!sp_line[0].equals(odr.driver_id)){
+            if(!sp_line[1].equals(odr.orders)){
                 track = new Track(sp_line[0],sp_line[1]);
                 if(odr!=null){
                     odr.writer();
@@ -39,7 +38,7 @@ public class FileLoader {
         }
         track.writer();
         br.close();
-
         System.out.println("完成");
     }
+
 }

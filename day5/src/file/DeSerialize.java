@@ -12,10 +12,10 @@ public class DeSerialize
 {
     public static void deSerialize(String filename)
     {
-        Track track = null;
+        Track track;
         try
         {
-            FileInputStream fileIn = new FileInputStream("E:\\jetJava\\data\\track\\1.txt");
+            FileInputStream fileIn = new FileInputStream(filename);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             track = (Track)in.readObject();
             in.close();
